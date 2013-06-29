@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+dragon:
+  title: Dragon
+  description: Scary
+  image_url: dragon.png
+  price: 99.99
