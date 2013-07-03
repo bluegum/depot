@@ -19,12 +19,13 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe LineItemsController do
+  subject { LineItem.new :cart_id => 1, :product_id => 1}
 
   # This should return the minimal set of attributes required to create a valid
   # LineItem. As you add validations to LineItem, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "product_id" => "1" }
+    { :product_id => 1 }
   end
 
   # This should return the minimal set of values that should be in the session

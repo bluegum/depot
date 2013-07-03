@@ -29,12 +29,15 @@
 
         p, div.price_line {
             margin-left: 100px;
+
+            form, div {
+                  display: inline;
+            }
         }
 
         .price {
             color: #44a;
             font-weight: bold;
-            margin-left: 100px;
             margin-right: 3em;
         }
     }
