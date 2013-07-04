@@ -25,7 +25,7 @@ describe LineItemsController do
   # LineItem. As you add validations to LineItem, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { :product_id => 1 }
+    { :product_id => "1" }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -70,7 +70,7 @@ describe LineItemsController do
     describe "with valid params" do
       it "creates a new LineItem" do
         expect {
-          post :create, {:line_item => valid_attributes}, valid_session
+          post :create,  :product_id => "1"
         }.to change(LineItem, :count).by(1)
       end
 
@@ -82,7 +82,7 @@ describe LineItemsController do
 
       it "redirects to the created line_item" do
         post :create, {:line_item => valid_attributes}, valid_session
-        response.should redirect_to(LineItem.last)
+        response.should redirect_to cart_path(id: "1")
       end
     end
 
