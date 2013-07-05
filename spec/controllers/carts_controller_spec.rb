@@ -52,7 +52,7 @@ describe CartsController do
     describe "with invalid params" do
       it "redirects to carts list" do
         get :show, :id => 1
-        response.should redirect_to(carts_url)
+        response.should redirect_to(store_url)
       end
     end
   end
