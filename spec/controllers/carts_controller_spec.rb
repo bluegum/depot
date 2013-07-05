@@ -48,6 +48,13 @@ describe CartsController do
       get :show, {:id => cart.to_param}, valid_session
       assigns(:cart).should eq(cart)
     end
+
+    describe "with invalid params" do
+      it "redirects to carts list" do
+        get :show, :id => 1
+        response.should redirect_to(carts_url)
+      end
+    end
   end
 
   describe "GET new" do
