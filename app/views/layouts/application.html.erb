@@ -14,7 +14,9 @@
 
   <div id="columns">
     <div id="side">
+		<% if @cart %>
 		<%= render @cart %>
+		<% end %>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="#">News</a></li>

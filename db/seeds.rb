@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.delete_all
 #
-Product.create(title: 'FooBar', description: 'Full Metal Jacket', image_url: 'foobar.png', price: 999.95)
+Product.create(title: 'FooBar', description: 'An invaluable item', image_url: 'foobar.png', price: 999.95)
 #
 Product.create(title: 'SilverBullet', description:
                %{<p>
- Must have for vampire slayers </p>},
+ A must-have for vampire slayers. Features Full Metal Jacket</p>},
                image_url: 'bullet.jpg', price: 9.95)
 #
 Product.create(title: 'Dragon', description:
