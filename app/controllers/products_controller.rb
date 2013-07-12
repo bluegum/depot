@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by_id(params[:id])
   end
 
   # POST /products
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by_id(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
@@ -72,7 +72,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_id(params[:id])
     @product.destroy
 
     respond_to do |format|
