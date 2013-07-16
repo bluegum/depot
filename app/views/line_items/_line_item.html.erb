@@ -1,4 +1,5 @@
 <tr>
 	<td><%= line_item.quantity %>&times;</td>
 	<td><%= line_item.product.title %></td>
+	<td><%= button_to('Remove', {:action => "destroy", :controller => "line_items", :id => line_item.id, :method => :delete }) %></td>
 </tr>
