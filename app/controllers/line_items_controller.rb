@@ -76,10 +76,11 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     @line_item = LineItem.find(params[:id])
-    @line_item.destroy!
-
+    @line_item.destroy
+    product = Product.find(@line_item.product_id)
+    ccart = current_cart
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      format.html { redirect_to ccart, notice: "#{product.title} is removed from cart(#{ccart.id.to_s})" }
       format.json { head :no_content }
     end
   end
