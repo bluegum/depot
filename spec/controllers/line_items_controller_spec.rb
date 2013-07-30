@@ -82,7 +82,7 @@ describe LineItemsController do
 
       it "redirects to the created line_item" do
         post :create, {:line_item => valid_attributes}, valid_session
-        response.should redirect_to cart_path(id: "1")
+        response.should redirect_to store_path
       end
     end
 
@@ -157,8 +157,8 @@ describe LineItemsController do
 
     it "redirects to the line_items list" do
       line_item = LineItem.create! valid_attributes
-      delete :destroy, {:id => line_item.to_param}, valid_session
-      response.should redirect_to(line_items_url)
+      delete :destroy, {:id => line_item.to_param}
+      response.should redirect_to store_url
     end
   end
 
