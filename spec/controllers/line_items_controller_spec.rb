@@ -149,6 +149,7 @@ describe LineItemsController do
 
   describe "DELETE destroy" do
     it "destroys the requested line_item" do
+      Product.create! id: 1, title: "example", description: "example", image_url: "#", price: 11
       line_item = LineItem.create! valid_attributes
       expect {
         delete :destroy, {:id => line_item.to_param}, valid_session
@@ -156,6 +157,7 @@ describe LineItemsController do
     end
 
     it "redirects to the line_items list" do
+      Product.create! id: 1, title: "example", description: "example", image_url: "#", price: 11
       line_item = LineItem.create! valid_attributes
       delete :destroy, {:id => line_item.to_param}
       response.should redirect_to store_url
